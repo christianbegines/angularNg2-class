@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http'
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { App } from './app';
+import { App,providers } from './app';
 import  { MainComponent,NotesContainerComponent } from './app/containers';
 import {
   AppBarComponent,NoteCardComponent,
@@ -19,10 +20,13 @@ import {
     NoteCreatorComponent,
     ColorPickerComponent
   ],
+  providers,
   imports:[
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
+
   bootstrap:[App]
 })
 
