@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Input,Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'color-picker',
@@ -33,18 +33,26 @@ import { Component, OnInit } from '@angular/core';
       }
     `],
   template:`
-    <div class="color-section">
-      <i class="material-icons icon">color_lens</i>
-      <div class="selector row center-xs">
-        <div class="color">
-        </div>
+    <div class="color-selector">
+      <i (click)="showSelector(true)" class="material-icons icon">color_lens</i>
+      <div class="selector row center-xs" *ngIf="isSelectorVisible">
+        <div class="color" *ngFor="let color of colors"
+        (click)="selectColor(color)" [ngStyle]="{'background-color':color}"></div>
       </div>
     </div>
   `
-
-
 })
-export class ColorPickerComponent implements OnInit {
-  constructor() {}
-  ngOnInit() {}
+export class ColorPickerComponent  {
+  @Input() colors: string[]=[];
+  @Output() selected = new EventEmitter();
+  isSelectorVisible:boolean = false;
+
+  showSelector(value:boolean ){
+    this.isSelectorVisible=value;
+  }
+  
+  selectColor(color:string){
+    this.selected.next(color);
+    this.showSelector(false);
+  }
 }
