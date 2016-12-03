@@ -4,7 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { App } from './app';
 import  { MainComponent,NotesContainerComponent } from './app/containers';
-import { AppBarComponent,NoteCardComponent,NoteCreatorComponent } from './app/ui';
+import {
+  AppBarComponent,NoteCardComponent,
+  NoteCreatorComponent,ColorPickerComponent
+        } from './app/ui';
 
 @NgModule({
   declarations: [
@@ -13,8 +16,8 @@ import { AppBarComponent,NoteCardComponent,NoteCreatorComponent } from './app/ui
     AppBarComponent,
     NoteCardComponent,
     NotesContainerComponent,
-    NoteCreatorComponent
-
+    NoteCreatorComponent,
+    ColorPickerComponent
   ],
   imports:[
     BrowserModule,

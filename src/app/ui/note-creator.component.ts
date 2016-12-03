@@ -20,7 +20,7 @@ import {
           >
           <input
             type="text"
-            (focus)="toggle(true)";
+            (focus)="toggle(true)"
             [(ngModel)]="newNote.value"
             name="newNoteValue"
             placeholder="Take a note..."
@@ -28,6 +28,9 @@ import {
 
           >
           <div class="actions col-xs-12 row between-xs" *ngIf="fullForm">
+            <div class="col-xs-3">
+              <color-picker></color-picker>
+            </div>
             <button
               type="submit"
               class="btn-light"
