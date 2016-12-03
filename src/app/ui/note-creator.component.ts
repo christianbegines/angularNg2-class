@@ -56,7 +56,7 @@ import {
     }
     `]
 })
-export class NoteCreatorComponent implements OnInit {
+export class NoteCreatorComponent {
   @Output() createNote= new EventEmitter();
   colors:string[]=['#B19CD9','#FF6961','pink','#AEC6CF','#F49AC2','yellowgreen'];
 
@@ -90,5 +90,5 @@ export class NoteCreatorComponent implements OnInit {
   }
 
   constructor() {}
-  ngOnInit() {}
+
 }
